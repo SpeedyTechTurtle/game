@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="cssfiles/style.css">
+<title>Сайт с видео на фоне</title>
+<style>
+  .video-container::before {
+    content: ""; /* Обязательно для псевдоэлементов */
+    position: absolute; /* Позиционирование абсолютное, чтобы находился поверх видео */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ширина и высота на всю область видео */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Цвет фона с прозрачностью */
+  }
+  header {
+    background-color: #01010a;
+    color: #fff;
+    padding: 20px; 
+    text-align: center;
+    font-size:larger;
+  }
+
+  footer {
+    background-color: #01010a;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%; 
+    bottom: 0;
+    font-size: larger;
+  }
+
+  header h1 {
+    margin: 0; 
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    overflow: hidden;
+  }
+
+  .video-container {
+    right: 0;
+    bottom: 0;
+    min-width: 100vh;
+    min-height: 100vh;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    overflow: hidden;
+    
+  }
+
+  #video-background {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    left: 50%;
+    top: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+  }
+
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .button {
+    display: inline-block;
+    padding: 30px 30px;
+    background-color: rgb(17, 23, 78);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+    margin: 10px 20px;
+  }
+</style>
+</head>
+<header>
+    <h1>Бештау: Путь к вершине</h1>
+  </header>
+<body>
+
+<div class="video-container">
+  <video id="video-background" autoplay muted loop>
+    <source src="static\Desktop 2024.04.19 - 22.38 (online-video-cutter.com).mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="content">
+  <a href="unitygame1.html" class="button">Играть!</a>
+</div>
+
+</body>
+<footer>
+    <p>Created by Funny monkeys</p>
+</footer>
+</html>
